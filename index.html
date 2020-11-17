@@ -1,17 +1,13 @@
 <html>
-
   <head>
     <h1> This is my page for the bonus section
     </h1>
   </head>
-
   <body>
-
     <div style="width:500px;height:500px">
       <script src="https://static.vidazoo.com/basev/vptm.js"></script>
-
       <script type="text/javascript">
-        var settings = {
+        let settings = {
           userId: "57b1cfb0f39a2d1100d8969c",
           playerId: "5b228165ded76a0004ad5a55",
           auto: false,
@@ -20,12 +16,9 @@
             holdStartRollSaga: true
           }
         };
-
-            vdz.create(settingsת function(err, player)){
-                 if (err) {
-                      //handle error
-                  }
-
+        (async function() {
+          try {
+            let player = await vdz.create(settings);
             player.on("adStart", () => {
                   console.log("player ad started")
                   isOpen = true;
@@ -35,23 +28,19 @@
               console.log("Player Paused")
             });
             
-            player.init();
+             await player.init();
            // player.start();
-            
+
+         setTimeout(player.resumeRoll(), 60000);
          setTimeout(player.resumeRoll(), 3000);
-            
-   
-              
-         
 
+
+
+          } catch{
+            //handle error
+          }
+        })();
       </script>
-
     </div>
-
-
-
   </body>
-
-
-
 </html>
