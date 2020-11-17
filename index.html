@@ -17,6 +17,7 @@
           auto: false,
           player: {
             autoPlay: false
+            holdStartRollSaga: true
           }
         };
 
@@ -33,6 +34,8 @@
             player.on("adPaused",function(adModel){
               console.log("Player Paused")
             });
+            
+            setTimeout(player.resumeRoll(), 60000);
 
             await player.init();
 
