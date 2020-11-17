@@ -17,7 +17,7 @@
           auto: false,
           player: {
             autoPlay: false,
-            //holdStartRollSaga: true
+            holdStartRollSaga: true
           }
         };
 
@@ -38,7 +38,7 @@
              await player.init();
            // player.start();
             
-         setTimeout(player.start(), 60000);
+         setTimeout(player.resumeRoll() 60000);
             
    
               
