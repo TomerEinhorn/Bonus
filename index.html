@@ -11,7 +11,7 @@
       <script src="https://static.vidazoo.com/basev/vptm.js"></script>
 
       <script type="text/javascript">
-        let settings = {
+        var settings = {
           userId: "57b1cfb0f39a2d1100d8969c",
           playerId: "5b228165ded76a0004ad5a55",
           auto: false,
@@ -21,10 +21,10 @@
           }
         };
 
-        (async function() {
-
-          try {
-            let player = await vdz.create(settings);
+            vdz.create(settingsת function(err, player)){
+                 if (err) {
+                      //handle error
+                  }
 
             player.on("adStart", () => {
                   console.log("player ad started")
@@ -35,18 +35,14 @@
               console.log("Player Paused")
             });
             
-             await player.init();
+            player.init();
            // player.start();
             
          setTimeout(player.resumeRoll(), 3000);
             
    
               
-          } catch{
-            //handle error
-          }
-
-        })();
+         
 
       </script>
 
