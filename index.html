@@ -21,7 +21,7 @@
             let player = await vdz.create(settings);
             player.on("adStart", () => {
                   console.log("player ad started")
-                  isOpen = true;
+                  // isOpen = true;
             });
             
             player.on("adPaused",function(adModel){
@@ -32,9 +32,9 @@
             });
             
              await player.init();
-           // player.start();
+            player.start();
 
-         setTimeout(player.start(), 3000);
+        // setTimeout(player.start(), 3000);
          
 
 
