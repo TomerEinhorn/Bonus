@@ -12,7 +12,7 @@
           playerId: "5b228165ded76a0004ad5a55",
           auto: false,
           player: {
-            autoPlay: false,
+            autoPlay: true,
             holdStartRollSaga: true
           }
         };
@@ -32,7 +32,7 @@
             });
             
              await player.init();
-            player.resumeRoll();
+            setTimeout(player.resumeRoll(),3000);
 
         // setTimeout(player.start(), 3000);
          
