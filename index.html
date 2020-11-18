@@ -31,8 +31,12 @@
 
             });
             
-            await player.init();
-            player.play();
+            await player.init().then(()=>{
+                 setTimeout(player.start(), 3000);
+          })
+            
+            //await player.init();
+          //  player.play();
         //  player.start();
            // player.resumeRoll();
          //    setTimeout(player.resumeRoll(), 3000);
