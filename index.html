@@ -19,32 +19,21 @@
         (async function() {
           try {
             let player = await vdz.create(settings);
-            player.on("adStart", () => {
-                  console.log("player ad started")
-                  isOpen = true;
-            });
+
+            // writing "player Paused" to consule when the user clicks the pause button (section C of bonus)
             
             player.on("adPaused",function(adModel){
               console.log("Player Paused")
               
-            //setTimeout(player.resumeRoll(), 3000);
 
             });
+            
+            // The code should load on page load, yet the player should be configured to wait 1 min before initiation and playing an ad (section B of bonus)
             
             await player.init().then(()=>{
                  setTimeout(function(){
                             player.start()}, 60000);
           })
-            
-            //await player.init();
-          //  player.play();
-        //  player.start();
-           // player.resumeRoll();
-         //    setTimeout(player.resumeRoll(), 3000);
-        //  setTimeout(player.play(), 3000);
-       // setTimeout(player.start(), 3000);
-         
-
 
           } catch{
             //handle error
