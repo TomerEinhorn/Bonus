@@ -32,7 +32,8 @@
             });
             
             await player.init().then(()=>{
-                 setTimeout(player.start(), 3000);
+                 setTimeout(function(){
+.... .. ..... . . ........ player.start()}, 3000);
           })
             
             //await player.init();
